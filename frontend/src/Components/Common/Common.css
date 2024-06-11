@@ -1,0 +1,43 @@
+.footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5vh;
+    width: 100%;
+}
+.footerSection{
+    display: flex;
+    justify-content: space-evenly;
+}
+.footerSection a{
+    text-decoration: none;
+    color: white;
+}
+
+.menu {
+    background-color: #333;
+    padding: 1em 0;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 1.5vh 2vh;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #575757;
+}

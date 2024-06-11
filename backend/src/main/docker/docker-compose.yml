@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   db:
     image: mysql:8.0
@@ -11,7 +12,9 @@ services:
       - db_data:/var/lib/mysql
 
   backend:
-    build: ./backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
@@ -20,12 +23,14 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/dribleshop
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     volumes:
-      - ./backend:/app
+      - ../../..:/app
 
   frontend:
     build:
-      context: ./frontend
+      context: ../../../../frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:80"
     depends_on:
